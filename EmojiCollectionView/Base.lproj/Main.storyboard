@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmojiCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PrQ-Ea-lEV">
+                                <rect key="frame" x="0.0" y="146" width="375" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="04u-G4-jsz"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="heH-9n-QH1">
+                                    <size key="itemSize" width="120" height="110"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCell" id="4Aa-0b-kwb" customClass="CollectionViewCell" customModule="EmojiCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="120" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="110"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ud-kY-cRo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="110"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="FOK-R8-6ew">
+                                                            <rect key="frame" x="5" y="5" width="110" height="100"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="FOK-R8-6ew" firstAttribute="top" secondItem="7ud-kY-cRo" secondAttribute="top" constant="5" id="fDM-Rr-KDY"/>
+                                                        <constraint firstItem="FOK-R8-6ew" firstAttribute="leading" secondItem="7ud-kY-cRo" secondAttribute="leading" constant="5" id="iPx-Cg-7LD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="FOK-R8-6ew" secondAttribute="bottom" constant="5" id="rbw-9v-0gy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FOK-R8-6ew" secondAttribute="trailing" constant="5" id="xQK-MV-IN1"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="7ud-kY-cRo" firstAttribute="top" secondItem="4Aa-0b-kwb" secondAttribute="top" id="RW8-nH-Q63"/>
+                                            <constraint firstItem="7ud-kY-cRo" firstAttribute="leading" secondItem="4Aa-0b-kwb" secondAttribute="leading" id="tOm-s4-krn"/>
+                                            <constraint firstAttribute="trailing" secondItem="7ud-kY-cRo" secondAttribute="trailing" id="tak-Dk-JCh"/>
+                                            <constraint firstAttribute="bottom" secondItem="7ud-kY-cRo" secondAttribute="bottom" id="vqI-Ve-gy0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="FOK-R8-6ew" id="87B-fg-D3h"/>
+                                            <outlet property="view" destination="7ud-kY-cRo" id="lBw-PY-n2v"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="tfq-BR-e1e"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="sZb-BT-6ty"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PrQ-Ea-lEV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cEl-b6-OKN"/>
+                            <constraint firstItem="PrQ-Ea-lEV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tRA-je-Mjw"/>
+                            <constraint firstItem="PrQ-Ea-lEV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="126" id="uuJ-kl-zOX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cat" width="444" height="480"/>
+    </resources>
+</document>
